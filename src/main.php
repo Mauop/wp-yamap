@@ -88,6 +88,10 @@ function show_yamap(){
 	$latitude 	= get_post_meta( $post->ID, 'latitude', 1 );
 	$longitude 	= get_post_meta( $post->ID, 'longitude', 1 );
 
+	if ( empty($latitude) || empty($longitude) ) {
+		return;
+	}
+
 	$output = "<div id='map' style='width: 100%; height: 90%;min-height:500px'></div>
 		<script src='https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=36304522-c992-4a7c-a8b3-0ad4b0d590e5' type='text/javascript'></script>
 		<script type='text/javascript'>
