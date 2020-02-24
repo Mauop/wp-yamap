@@ -94,7 +94,7 @@ class yaMapShortcode {
         update_post_meta( $post_id, 'longitude', $lon );
     }
 
-    public function show_yamap( $atts, $content ) {
+    public function show_yamap() {
         global $post;
         // значение полей координат
         $latitude   = get_post_meta( $post->ID, 'latitude', 1 );
@@ -134,6 +134,6 @@ class yaMapShortcode {
 
 }
 
-$my_class = new yaMapShortcode();
+$yaMap = new yaMapShortcode();
 
 ?>
